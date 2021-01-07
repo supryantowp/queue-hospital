@@ -1,11 +1,12 @@
-import { Box, Heading, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Stack, Text } from '@chakra-ui/react'
+import NextLink from 'next/link'
 
-import ToggleColorMode from '@/component/toggle-color-mode'
+import AddAntrianDrawer from '@/component/add-antrian-drawer'
 import siteConfig from '~/site-config'
 
 const Index = () => (
   <Box d='grid' placeItems='center' minH='100vh'>
-    <Box>
+    <Stack spacing={4} align='start'>
       <Heading
         bgGradient='linear(to-l, #7928CA,#FF0080)'
         bgClip='text'
@@ -15,9 +16,11 @@ const Index = () => (
         {siteConfig.title}
       </Heading>
       <Text>{siteConfig.description}</Text>
-      <Text>under development</Text>
-      <ToggleColorMode />
-    </Box>
+      <Flex>
+        <AddAntrianDrawer />
+        <NextLink href='/antrian'>List Antrian</NextLink>
+      </Flex>
+    </Stack>
   </Box>
 )
 
